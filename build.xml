@@ -51,12 +51,6 @@
         </batchtest>
     </junit>
     <fail message="TEST FAILURE" if="failed"/>
-    
-    <echo message="Starting JaCoCo covarage ..."/>
-    <jacoco:coverage destfile="${result.exec.file}">
-</jacoco:coverage>
-    
-    
   </target>
   <target name="report" depends="test">
 		<!--  Create coverage report -->
