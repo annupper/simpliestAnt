@@ -14,6 +14,7 @@
   <target name="compile">
     <mkdir dir="${main.build.dir}"/>
     <javac srcdir="${main.src.dir}" destdir="${main.build.dir}" includeantruntime="false"/>
+    <echo
   </target>
 
   <target name="test-compile" depends="compile">
@@ -24,15 +25,17 @@
   </target>
 
   <target name="test" depends="test-compile">
-    <junit printsummary="on" haltonfailure="yes" fork="true">
+    <echo message="Starting test ..."/>
+    <junit printsummary="on" haltonfailure="yes">
         <classpath>
           <path refid="classpath.test"/>
           <pathelement location="${test.build.dir}"/>
         </classpath>
-        <formatter type="brief" usefile="false" />
+        <formatter type="xml" />
         <batchtest>
             <fileset dir="${test.src.dir}" includes="**/*Test.java" />
         </batchtest>
     </junit>
+    <fail message="TEST FAILURE" if="failed"/>
   </target>
 </project>
