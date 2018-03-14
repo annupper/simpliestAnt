@@ -54,7 +54,7 @@
     
     <echo message="Starting JaCoCo covarage ..."/>
     <jacoco:coverage destfile="${result.exec.file}">
-	      <echo message "OK"/>
+	      <echo message="OK"/>
 </jacoco:coverage>
     
     
