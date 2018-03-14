@@ -10,7 +10,11 @@
     <pathelement location="lib/hamcrest-core-1.3.jar"/>
     <pathelement location="${main.build.dir}"/>
   </path>
-
+  <!--  Import JaCoCo Ant tasks  -->
+  <taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml">
+        <classpath path="lib/jacocoant.jar"/>
+    </taskdef>
+  
   <target name="compile">
     <mkdir dir="${main.build.dir}"/>
     <javac srcdir="${main.src.dir}" destdir="${main.build.dir}" includeantruntime="false"/>
@@ -24,6 +28,9 @@
   </target>
 
   <target name="test" depends="test-compile">
+    <!--
+ Wrap test execution with the JaCoCo coverage task 
+-->
     <echo message="Starting test ..."/>
     <junit printsummary="on" haltonfailure="yes">
         <classpath>
