@@ -2,4 +2,3 @@
 <target name="hello"></target>
 <echo>Hello World!</echo>
 </project>
-<project name="MyProjectTwo" default="hello"></project>
