@@ -49,9 +49,7 @@
             <formatter type="plain"/>
             <formatter type="xml"/>
             <batchtest fork="true">
-                <fileset dir="test">
-                    <fileset dir="${test.src.dir}" includes="**/*Test.java" />
-                </fileset>
+                <fileset dir="${test.src.dir}" includes="**/*Test.java" />
             </batchtest>
         </junit>
     </jacoco:coverage>
