@@ -1,0 +1,6 @@
+<prpject name="MyProject" default="hello">
+<target name="hello"></target>
+<echo>Hello World!</echo>
+<target name="hello"></target>
+</project>
+<prpject name="MyProject" default="hello"></project>
