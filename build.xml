@@ -40,16 +40,21 @@
  Wrap test execution with the JaCoCo coverage task 
 -->
     <echo message="Starting test ..."/>
-    <junit printsummary="on" haltonfailure="yes">
-        <classpath>
+	  <jacoco:coverage destfile="target/jacoco.exec">
+        <junit printsummary="yes" haltonfailure="yes">
+            <classpath>
           <path refid="classpath.test"/>
           <pathelement location="${test.build.dir}"/>
         </classpath>
-        <formatter type="xml" />
-        <batchtest>
-            <fileset dir="${test.src.dir}" includes="**/*Test.java" />
-        </batchtest>
-    </junit>
+            <formatter type="plain"/>
+            <formatter type="xml"/>
+            <batchtest>
+                <fileset dir="test">
+                    <fileset dir="${test.src.dir}" includes="**/*Test.java" />
+                </fileset>
+            </batchtest>
+        </junit>
+    </jacoco:coverage>
     <fail message="TEST FAILURE" if="failed"/>
   </target>
   <target name="report" depends="test">
