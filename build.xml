@@ -41,14 +41,14 @@
 -->
     <echo message="Starting test ..."/>
 	  <jacoco:coverage destfile="target/jacoco.exec">
-        <junit printsummary="yes" haltonfailure="yes">
+        <junit printsummary="yes" haltonfailure="yes" fork="yes">
             <classpath>
           <path refid="classpath.test"/>
           <pathelement location="${test.build.dir}"/>
         </classpath>
             <formatter type="plain"/>
             <formatter type="xml"/>
-            <batchtest>
+            <batchtest fork="true">
                 <fileset dir="test">
                     <fileset dir="${test.src.dir}" includes="**/*Test.java" />
                 </fileset>
