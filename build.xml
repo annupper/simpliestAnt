@@ -68,7 +68,7 @@
 			<!-- the class files and optional source files ... -->
 			<structure name="JaCoCo Ant Example">
 				<classfiles>
-					<fileset dir="${main.src.dir}" />
+					<fileset dir="${main.build.dir}" />
 				</classfiles>
 				<sourcefiles encoding="UTF-8">
 					<fileset dir="${main.src.dir}" />
